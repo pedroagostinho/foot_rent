@@ -7,10 +7,10 @@ Booking.destroy_all
 Review.destroy_all
 Stat.destroy_all
 
-number_of_clubs = 3
-number_of_players = 6
-number_of_bookings = 3
-number_of_reviews = 3
+number_of_clubs = 10
+number_of_players = 100
+number_of_bookings = 50
+number_of_reviews = 50
 
 number_of_clubs.times do
   club = Club.new(
@@ -32,15 +32,15 @@ number_of_players.times do
     nationality: Faker::Address.country,
     age: rand(16..36),
     availability: false,
-    club_id: rand(1..number_of_clubs)
+    club_id: rand((Club.first.id)..(Club.last.id))
   )
   player.save!
 end
 
 number_of_bookings.times do
   booking = Booking.new(
-    club_id: rand(1..number_of_clubs),
-    player_id: rand(1..number_of_players),
+    club_id: rand((Club.first.id)..(Club.last.id)),
+    player_id: rand((Player.first.id)..(Player.last.id)),
     start_date: "2019-02-25 17:30",
     end_date: "2019-02-28 17:30"
   )
@@ -51,8 +51,8 @@ number_of_reviews.times do
   review = Review.new(
     content: Faker::Lorem.paragraph,
     stars: rand(0..5),
-    player_id: rand(1..number_of_players),
-    club_id: rand(1..number_of_clubs)
+    player_id: rand((Player.first.id)..(Player.last.id)),
+    club_id: rand((Club.first.id)..(Club.last.id))
   )
   review.save!
 end

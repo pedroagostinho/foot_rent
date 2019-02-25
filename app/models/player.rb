@@ -7,5 +7,5 @@ class Player < ApplicationRecord
   validates :value_per_match, presence: true
   validates :nationality, presence: true
   validates :age, presence: true
-  validates :availability, presence: true
+  # validates :availability, presence: true
 end
