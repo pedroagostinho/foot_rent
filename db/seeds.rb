@@ -1,5 +1,4 @@
 require 'faker'
-require 'byebug'
 
 Club.destroy_all
 Player.destroy_all
