@@ -1,0 +1,41 @@
+
+<div class="container">
+  <div class="row">
+       <!-- insert <div class="card"> -->
+    <% @players.each do |player| %>
+      <div class="col-xs-12 col-sm-6 col-md-4">
+
+          <div class="card-player">
+            <%= player.photo %> |
+            <div class="card-player-name"><%= link_to player.name, player_path(player) %></div>
+            <%= player.position %> |
+            <%= player.value_per_match %> € |
+            <%= player.club.name %> |
+            <% if player.availability == false %>
+              <%= "Player is available" %> |
+            <% else %>
+              <%= "Player is already booked" %> |
+            <% end %>
+            <%= link_to "Book this player", new_club_booking_path(current_club.id) %>
+          </div>
+
+      </div>
+    <% end %>
+  </div>
+</div>
+
+<!-- create_table "players", force: :cascade do |t|
+    t.string "name"
+    t.string "position"
+    t.integer "value_per_match"
+    t.string "nationality"
+    t.string "social_url"
+    t.integer "age"
+    t.boolean "availability"
+    t.bigint "club_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "photo"
+    t.index ["club_id"], name: "index_players_on_club_id"
+  end
+ -->
