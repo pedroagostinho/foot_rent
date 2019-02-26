@@ -8,6 +8,12 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  background-color: rgba(255, 255, 255, 0.5);
+  transition: 2s background-color ease;
+}
+
+.navbar-wagon-white {
+  background-color: white;
 }
 
 /* Logo */
@@ -33,6 +39,25 @@
 .navbar-wagon-item {
   cursor: pointer;
   padding: 0 20px;
+}
+
+.btn-medium {
+  width: 120px;
+  height: 40px;
+  left: 1129px;
+  top: 40px;
+  border: 1.5px solid #1CE6CE;
+  box-sizing: border-box;
+  border-radius: 10px;
+  text-align: center;
+  padding: 10px 15px;
+  color: #1CE6CE;
+}
+
+.btn-medium:hover {
+  opacity: 1;
+  text-decoration: none;
+  color: #A0A0A0;
 }
 
 /* Navbar link */

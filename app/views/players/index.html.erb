@@ -1,3 +1,4 @@
+
 <div class="container">
   <div class="row">
        <!-- insert <div class="card"> -->
@@ -15,16 +16,13 @@
             <% else %>
               <%= "Player is already booked" %> |
             <% end %>
-            <%=  "Book this player" %>
+            <%= link_to "Book this player", new_club_booking_path(current_club.id) %>
           </div>
 
       </div>
     <% end %>
   </div>
 </div>
-
-
-
 
 <!-- create_table "players", force: :cascade do |t|
     t.string "name"

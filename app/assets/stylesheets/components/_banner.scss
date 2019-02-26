@@ -1,7 +1,7 @@
 .banner {
   background-image: asset-url("background4.jpeg");
   color: white;
-  height: 90vh;
+  height: 100vh;
   /* if you have a 70px navbar => height: calc(100vh - 70px); */
   background-size: cover !important;
   // display: flex;
@@ -31,5 +31,5 @@
 
 .banner-content {
   margin-left: 50px;
-  padding-top: 35vh;
+  padding-top: 45vh;
 }
