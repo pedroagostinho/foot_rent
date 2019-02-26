@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   resources :players do
     resources :reviews
   end
+
+  get '/my_players', to: 'players#my_players'
   resources :clubs do
     resources :bookings
   end
