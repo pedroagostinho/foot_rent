@@ -1,5 +1,3 @@
-require 'faker'
-
 Club.destroy_all
 Player.destroy_all
 Booking.destroy_all
@@ -22,9 +20,9 @@ number_of_clubs.times do
   club.save!
 end
 
-
 number_of_players.times do
   player = Player.new(
+    photo: URI("https://picsum.photos/100/50/?random"),
     name: Faker::Football.player,
     position: Faker::Football.position,
     value_per_match: rand(100..100000),
@@ -55,3 +53,14 @@ number_of_reviews.times do
   )
   review.save!
 end
+
+# number_of_players.times do
+#   stat = Stat.new(
+#     goals: rand(0..5),
+#     assists: rand(0..5),
+#     games_played: rand(0..5),
+#     form: ['low', 'medium', 'high'].sample,
+#     player_id: rand((Player.first.id)..(Player.last.id)),
+#   )
+#   stat.save!
+# end
