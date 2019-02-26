@@ -7,16 +7,17 @@
 
           <div class="card-player">
             <%= player.photo %>
-            <div class="card-player-name"><%= link_to player.name, player_path(player), class: "link-color" %></div>
-            <p><%= player.position %></p>
+            <div class="card-player-name"><%= link_to player.name, player_path(player), class: "link-player" %></div>
+            <p class="position"><%= player.position %></p>
             <p><%= player.value_per_match %> €</p>
             <p><%= player.club.name %></p>
             <% if player.availability == false %>
-              <%= "Player is available" %> |
+              <%= "Player is available" %>   =>
+              <%= link_to "Book this player", new_club_booking_path(current_club.id), class: "link-book" %>
             <% else %>
-              <%= "Player is already booked" %> |
+              <%= "Player is already booked" %>
             <% end %>
-            <%= link_to "Book this player", new_club_booking_path(current_club.id), class: "link-color" %>
+
           </div>
 
       </div>
