@@ -1,1 +1,67 @@
-<h1>hello</h1>
+<br>
+<br>
+<br>
+<div>
+  <div class = "h1-show"><h1><%= @player.name %> </h1></div>
+
+  <div class = "card-product">
+    <img class = "img" src="https://metrouk2.files.wordpress.com/2019/02/gettyimages-1130278499-1.jpg?quality=90&strip=all&zoom=1&resize=644%2C428" alt="">
+    <br>
+    <div class="card-product-infos">
+      <div class = "info">
+        <h2>Nationality</h2>
+        <p><%= @player.nationality %></p>
+      </div>
+      <div class = "info">
+        <h2>Position</h2>
+        <p><%= @player.position %> </p>
+      </div>
+      <div class = "info">
+        <h2>Age</h2>
+        <p><%= @player.age %></p>
+      </div>
+      <div class = "info">
+        <h2>Value per Match</h2>
+        <p><%= @player.value_per_match%>€</p>
+      </div>
+      <div class = "info">
+        <h2>Club</h2>
+        <p><%= @player.club.name%></p>
+      </div>
+    </div>
+    <% if @player.availability == false %>
+        <%= "Player is available" %> <%= '<i class="fas fa-check"></i>'.html_safe %>
+      <% else %>
+        <%= "Player is already booked" %> <%= '<i class="fas fa-times"></i>'.html_safe %>
+      <% end %>
+  </div>
+  <br>
+
+<div class = "card-product">
+  <%= simple_form_for(@player) do |f| %>
+
+  <div id = "start-date" class="form-inputs">
+    <%= f.input :name %>
+  </div>
+  <div class="form-inputs">
+    <%= f.input :photo %>
+
+  </div>
+
+
+  <div class="form-actions">
+    <%= f.submit :Book, class: 'btn btn-primary '%>
+  </div>
+<% end %>
+
+
+</div>
+
+
+
+
+
+
+
+</div>
+
