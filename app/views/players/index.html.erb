@@ -1,16 +1,17 @@
 <ul>
-  <% @players.each do |p| %>
+  <% @players.each do |player| %>
   <li>
-    <%= p.photo %> |
-    <%= p.name %> |
-    <%= p.position %> |
-    <%= p.value_per_match %> € |
-    <%= p.club_id %> |
-    <% if p.availability == true %>
+    <%= player.photo %> |
+    <%= link_to player.name, player_path(player) %>
+    <%= player.position %> |
+    <%= player.value_per_match %> € |
+    <%= player.club.name %> |
+    <% if player.availability == false %>
     <%= "Player is available" %>
     <% else %>
     <%= "Player is already booked" %>
-    <% end %>
+    <% end %> |
+    <%#= link_to "Book this player", new_club_booking(player) %>
   </li>
   <% end %>
 </ul>
