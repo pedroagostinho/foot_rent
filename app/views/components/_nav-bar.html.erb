@@ -1,7 +1,7 @@
 <div class="navbar-wagon navbar-fixed-top">
   <!-- Logo -->
   <%= link_to root_path, class: "navbar-wagon-brand" do %>
-    <%= image_tag "foot-rent-logo2.png", height: 50 %>
+    <%= image_tag "logo.png", height: 50 %>
   <% end %>
 
   <!-- Right Navigation -->
@@ -41,7 +41,8 @@
       </div>
     <% else %>
       <!-- Login link (when logged out) -->
-      <%= link_to t(".sign_in", default: "Login"), new_club_session_path, class: "btn-medium navbar-wagon-item navbar-wagon-link" %>
+
+      <%= link_to t(".sign_in", default: "Log In"), new_club_session_path, class: "btn-medium navbar-wagon-item navbar-wagon-link" %>
     <% end %>
   </div>
 
