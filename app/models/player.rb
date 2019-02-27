@@ -8,4 +8,6 @@ class Player < ApplicationRecord
   validates :nationality, presence: true
   validates :age, presence: true
   # validates :availability, presence: true
+
+  mount_uploader :photo, PhotoUploader #cloudary
 end
