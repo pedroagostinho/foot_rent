@@ -22,29 +22,48 @@
 
           </div> -->
 
-          <div class="card" style="background-image: linear-gradient(rgba(255,255,255,0.0), rgba(225,225,225,0.0))">
+          <div class="card-trip">
+            <%= cl_image_tag player.photo%>
+            <div class="card-trip-infos">
+              <div>
+                <h2><%= link_to player.name, player_path(player), class: "link-player" %></h2>
+                <p><%= image_tag ('logo team.png'), class: 'logo-team' %><%= player.club.name %></p>
+                <p><%= image_tag ('logo position.png'), class: 'logo-team' %><em><%= player.position %></em></p>
+              </div>
+              <h2 class="card-trip-pricing"><%= "#{player.value_per_match}.00" %></h2>
+              <div class="card-trip-user avatar-bordered">
+                <%= image_tag ('benfica-icon.png'), class: 'logo-team' %>
+              </div>
+            </div>
+          </div>
+
+
+
+
+          <!-- <div class="card" style="background-image: linear-gradient(rgba(255,255,255,0.0), rgba(225,225,225,0.0))">
             <div class="card-category">
-              <strong><%= "#{player.value_per_match}.00" %> €</strong> per match
+              <strong><%#= "#{player.value_per_match}.00" %> €</strong> per match
             </div>
             <div class="card-description">
-              <h2><%= link_to player.name, player_path(player), class: "link-player" %></h2>
-              <p class="club"><%= image_tag ('logo team.png'), class: 'logo-team' %> <%= player.club.name %></p>
-              <p><%= image_tag ('logo position.png'), class: 'logo-team' %><em><%= player.position %></em></p>
+              <h2><%#= link_to player.name, player_path(player), class: "link-player" %></h2>
+              <p class="club"><%#= image_tag ('logo team.png'), class: 'logo-team' %> <%= player.club.name %></p>
+              <p><%#= image_tag ('logo position.png'), class: 'logo-team' %><em><%= player.position %></em></p>
             </div>
 
             <div class="card-info">
-              <p><% if player.availability == false %>
-              <%= link_to "Book now!", new_club_booking_path(current_club.id), class: "btn btn-primary" %>
-              <% else %>
-              <%= "Unavailable" %>
-              <% end %></p>
+              <p><%# if player.availability == false %>
+              <%#= link_to "Book now!", new_club_booking_path(current_club.id), class: "btn btn-primary" %>
+              <%# else %>
+              <%#= "Unavailable" %>
+              <%# end %></p>
             </div>
 
 <!--             <img class="card-user" src="https://specials-images.forbesimg.com/imageserve/1126422759/416x416.jpg?background=000000&cropX1=1430&cropX2=2561&cropY1=15&cropY2=1145"> -->
 
-            <%= cl_image_tag player.photo, height: 80, width: 80, crop: :thumb, class: "card-user" %>
-          </div>
-
+            <%#= cl_image_tag player.photo, height: 80, width: 80, crop: :thumb, class: "card-user" %>
+<!--           </div> -->
+<br>
+<br>
       </div>
     <% end %>
   </div>
