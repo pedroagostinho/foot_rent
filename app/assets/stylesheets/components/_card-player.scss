@@ -31,3 +31,22 @@
   color: #111111;
   font-size: 8;
 }
+
+.btn-green-small {
+  width: 120px;
+  height: 60px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  line-height: normal;
+  font-size: 20px;
+  color: #FEFEFE;
+  background-color: $footrent-green;
+  margin-left: 50px;
+}
+
+
+.btn-green-small:hover {
+  opacity: 1;
+  text-decoration: none;
+  color: #A0A0A0;
+}
