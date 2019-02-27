@@ -22,13 +22,14 @@
 
           </div> -->
 
-          <div class="card" style="background-image: linear-gradient(rgba(220,220,220,0.2), rgba(220,220,220,0.2))">
+          <div class="card" style="background-image: linear-gradient(rgba(255,255,255,0.0), rgba(225,225,225,0.0))">
             <div class="card-category">
               <strong><%= "#{player.value_per_match}.00" %> €</strong> per match
             </div>
             <div class="card-description">
               <h2><%= link_to player.name, player_path(player), class: "link-player" %></h2>
-              <p><%= player.club.name %></p>
+              <p class="club"><%= image_tag ('logo team.png'), class: 'logo-team' %> <%= player.club.name %></p>
+              <p><%= image_tag ('logo position.png'), class: 'logo-team' %><em><%= player.position %></em></p>
             </div>
 
             <div class="card-info">
