@@ -1,17 +1,15 @@
-<br>
-<br>
-<br>
-<div>
-  <div class = "h1-show"><h1><%= @player.name %> </h1></div>
-
+<div class="player-container">
+  <h1><%= @player.name %> </h1>
   <div class = "card-product">
-    <img class = "img" src="https://png.pngtree.com/element_our/png_detail/20181023/cr7-png-png_195384.jpg" alt="">
+    <div class="avatar">
+      <img class = "img" src="https://png.pngtree.com/element_our/png_detail/20181023/cr7-png-png_195384.jpg" alt="">
+    </div>
     <br>
     <div class="card-product-infos">
       <div class = "info">
         <h2>Nationality</h2>
         <p><%= @player.nationality %></p>
-        <img id = "flag" src="https://cdn.countryflags.com/thumbs/portugal/flag-400.png" alt="">
+        <img src="https://cdn.countryflags.com/thumbs/portugal/flag-400.png" alt="">
       </div>
       <div class = "info">
         <h2>Position</h2>
@@ -37,7 +35,12 @@
         <%= "Player is already booked" %> <%= '<i class="fas fa-times"></i>'.html_safe %>
       <% end %>
   </div>
-  <br>
+  <div class="stats">
+    <%= image_tag('stats.png') %>
+  </div>
+
+</div>
+
 
 <!-- <div class = "card-product">
   <%#= simple_form_for(@player) do |f| %>
@@ -59,11 +62,6 @@
 
 </div>
  -->
-
-
-
-
-
 
 </div>
 
