@@ -20,6 +20,12 @@ class PlayersController < ApplicationController
     end
   end
 
+  def update
+    @player = Player.find(params[:id])
+    @player.update(player_params)
+    redirect_to @player
+  end
+
   def my_players
     @my_players = Player.where(club_id: current_club.id)
   end
