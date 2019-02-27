@@ -5,25 +5,49 @@
     <% @players.each do |player| %>
       <div class="col-xs-12 col-sm-6 col-md-4">
 
-          <div class="card-player">
-            <%= player.photo %>
-            <div class="card-player-name"><%= link_to player.name, player_path(player), class: "link-player" %></div>
-            <p class="position"><%= player.position %></p>
-            <p><%= player.value_per_match %> €</p>
-            <p><%= player.club.name %></p>
-            <% if player.availability == false %>
-              <%= "Player is available" %>   =>
-              <%= link_to "Book this player", new_club_booking_path(current_club.id), class: "link-book" %>
-            <% else %>
-              <%= "Player is already booked" %>
-            <% end %>
+<!--           <div class="card-player">
 
+            <img src="https://www.abola.pt//img/fotos/abola2015/FOTOSAP/ITALIA/2018/Ronaldo103.jpg" alt="">
+            <%#= cl_image_tag player.photo, :radius=>"max", border: "1px_solid", crop: :thumb %>
+            <div class="card-player-name"><%#= link_to player.name, player_path(player), class: "link-player" %></div>
+            <p class="position"><%#= player.position %></p>
+            <p><%#= player.value_per_match %> €</p>
+            <p><%#= player.club.name %></p>
+            <%# if player.availability == false %>
+              <%#= "Player is available" %>   =>
+              <%#= link_to "Book this player", new_club_booking_path(current_club.id), class: "link-book" %>
+            <%# else %>
+              <%#= "Player is already booked" %>
+            <%# end %>
+
+          </div> -->
+
+          <div class="card" style="background-image: linear-gradient(rgba(220,220,220,0.2), rgba(220,220,220,0.2))">
+            <div class="card-category">
+              <strong><%= "#{player.value_per_match}.00" %> €</strong> per match
+            </div>
+            <div class="card-description">
+              <h2><%= link_to player.name, player_path(player), class: "link-player" %></h2>
+              <p><%= player.club.name %></p>
+            </div>
+
+            <div class="card-info">
+              <p><% if player.availability == false %>
+              <%= link_to "Book now!", new_club_booking_path(current_club.id), class: "btn btn-primary" %>
+              <% else %>
+              <%= "Unavailable" %>
+              <% end %></p>
+            </div>
+
+            <img class="card-user" src="https://specials-images.forbesimg.com/imageserve/1126422759/416x416.jpg?background=000000&cropX1=1430&cropX2=2561&cropY1=15&cropY2=1145">
+            <%#= cl_image_tag player.photo, :radius=>"max", border: "1px_solid", crop: :thumb %>
           </div>
 
       </div>
     <% end %>
   </div>
 </div>
+
 
 <!-- create_table "players", force: :cascade do |t|
     t.string "name"
