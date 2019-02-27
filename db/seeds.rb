@@ -28,7 +28,7 @@ number_of_players.times do
     value_per_match: rand(100..1000),
     nationality: Faker::Address.country,
     age: rand(16...36),
-    availability: false,
+    availability: true,
     club_id: rand((Club.first.id)...(Club.last.id))
   )
   player.save!
@@ -58,9 +58,9 @@ list_id = Player.all.map { |p| p.id }
 
 list_id.each do |id|
   stat = Stat.new(
-    goals: rand(0..5),
-    assists: rand(0..5),
-    games_played: rand(0..5),
+    goals: rand(0...5),
+    assists: rand(0...5),
+    games_played: rand(0...5),
     form: ['low', 'medium', 'high'].sample,
     player_id: id,
   )
