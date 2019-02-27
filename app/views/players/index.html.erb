@@ -23,12 +23,12 @@
           </div> -->
 
           <div class="card-trip">
-            <%= cl_image_tag player.photo%>
+            <%= cl_image_tag(player.photo)%>
             <div class="card-trip-infos">
               <div>
                 <h2><%= link_to player.name, player_path(player), class: "link-player" %></h2>
-                <p><%= image_tag ('logo team.png'), class: 'logo-team' %><%= player.club.name %></p>
-                <p><%= image_tag ('logo position.png'), class: 'logo-team' %><em><%= player.position %></em></p>
+                <p><%= image_tag ('logo team.png'), class: 'logos-card' %><%= player.club.name %></p>
+                <p><%= image_tag ('logo position.png'), class: 'logos-card' %><em><%= player.position %></em></p>
               </div>
               <h2 class="card-trip-pricing"><%= "#{player.value_per_match}.00" %></h2>
               <div class="card-trip-user avatar-bordered">
