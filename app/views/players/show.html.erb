@@ -1,20 +1,20 @@
-<br>
-<br>
-<br>
-<div>
-  <div class = "h1-show"><h1><%= @player.name %> </h1></div>
-
+<div class="player-container">
+  <h1><%= @player.name %> </h1>
   <div class = "card-product">
 
-    <%= cl_image_tag @player.photo, height: 300, width: 400, crop: :fill %>
+    <div class="avatar">
+      <%= cl_image_tag @player.photo, height: 300, width: 400, crop: :fill %>
+    </div>
+    <br>
+
     <!-- <img class = "img" src="https://metrouk2.files.wordpress.com/2019/02/gettyimages-1130278499-1.jpg?quality=90&strip=all&zoom=1&resize=644%2C428" alt="">
     <br> -->
-
+  
     <div class="card-product-infos">
       <div class = "info">
         <h2>Nationality</h2>
         <p><%= @player.nationality %></p>
-        <img id = "flag" src="https://cdn.countryflags.com/thumbs/portugal/flag-400.png" alt="">
+        <img src="https://cdn.countryflags.com/thumbs/portugal/flag-400.png" alt="">
       </div>
       <div class = "info">
         <h2>Position</h2>
@@ -40,7 +40,12 @@
         <%= "Player is already booked" %> <%= '<i class="fas fa-times"></i>'.html_safe %>
       <% end %>
   </div>
-  <br>
+  <div class="stats">
+    <%= image_tag('stats.png') %>
+  </div>
+
+</div>
+
 
 
 <div class = "card-product">
@@ -54,8 +59,14 @@
 
  <!--  <div class="form-actions">
     <%#= f.submit :Book, class: 'btn btn-primary '%>
-  </div> -->
-<% end %>
+
+  </div>
+<%# end %>
+
+
+</div>
+ -->
+
 
 </div>
 
