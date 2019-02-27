@@ -40,8 +40,9 @@
               <% end %></p>
             </div>
 
-            <img class="card-user" src="https://specials-images.forbesimg.com/imageserve/1126422759/416x416.jpg?background=000000&cropX1=1430&cropX2=2561&cropY1=15&cropY2=1145">
-            <%#= cl_image_tag player.photo, :radius=>"max", border: "1px_solid", crop: :thumb %>
+<!--             <img class="card-user" src="https://specials-images.forbesimg.com/imageserve/1126422759/416x416.jpg?background=000000&cropX1=1430&cropX2=2561&cropY1=15&cropY2=1145"> -->
+
+            <%= cl_image_tag player.photo, height: 80, width: 80, crop: :thumb, class: "card-user" %>
           </div>
 
       </div>

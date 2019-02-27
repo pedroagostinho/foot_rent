@@ -4,8 +4,8 @@ Booking.destroy_all
 Review.destroy_all
 Stat.destroy_all
 
-number_of_clubs = 10
-number_of_players = 100
+number_of_clubs = 2
+number_of_players = 15
 number_of_bookings = 50
 number_of_reviews = 50
 
@@ -25,7 +25,7 @@ number_of_players.times do
     photo: URI("https://picsum.photos/100/50/?random"),
     name: Faker::Football.player,
     position: Faker::Football.position,
-    value_per_match: rand(100..100000),
+    value_per_match: rand(100..1000),
     nationality: Faker::Address.country,
     age: rand(16..36),
     availability: false,
