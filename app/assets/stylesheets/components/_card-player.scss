@@ -10,7 +10,7 @@
 //   border: 1px solid #21CD9A;
 //   background-color: white;
 //   margin: 5px;
-//   box-shadow: 0px 2px 2px $footrent-green;
+//   box-shadow: 0px 2px 2px $footrent-color;
 // }
 
 // .card-player img {
@@ -23,7 +23,7 @@
 //   color: #21CD9A;
 //   font-size: 20px;
 //   &:hover {
-//     color: $footrent-green;
+//     color: $footrent-color;
 //     text-decoration: none;
 //    }
 // }
@@ -31,7 +31,7 @@
 //   color: #111111;
 //   font-size: 16px;
 //   &:hover {
-//     color: $footrent-green;
+//     color: $footrent-color;
 //     text-decoration: none;
 //    }
 // }
@@ -41,18 +41,18 @@
 // }
 
 // .card-player-name {
-//   color: $footrent-green;
+//   color: $footrent-color;
 // }
 
 .btn-primary {
-  background-color: $footrent-green;
-  border: 1px solid $footrent-green;
+  background-color: $footrent-color;
+  border: 1px solid $footrent-color;
   color: white;
     &:hover {
     text-decoration: none;
-    color: $footrent-green;
+    color: $footrent-color;
     background-color: white;
-    border: 1px solid $footrent-green;
+    border: 1px solid $footrent-color;
   }
 }
 
@@ -65,7 +65,7 @@
   color: rgb(100, 100, 100);
   position: relative;
   margin: 10px;
-  border: 1px solid $footrent-green;
+  border: 1px solid $footrent-color;
 }
 
 .card-category {
@@ -81,7 +81,7 @@
   right: 10px;
   top: 10px;
   width: 80px;
-  border: 1px solid $footrent-green;
+  border: 1px solid $footrent-color;
   border-radius: 50%;
 }
 
@@ -102,10 +102,10 @@
 }
 
 .card-description a {
-  color: $footrent-green;
+  color: $footrent-color;
   &:hover {
     text-decoration: none;
-    color: $footrent-green;
+    color: $footrent-color;
   }
 }
 
@@ -123,7 +123,7 @@
   line-height: normal;
   font-size: 20px;
   color: #FEFEFE;
-  background-color: $footrent-green;
+  background-color: $footrent-color;
   margin-left: 50px;
 }
 
@@ -138,6 +138,11 @@
 }
 
 .logo-team {
+  height: 40px;
+  width: 40px;
+}
+
+.logos-card {
   height: 20px;
   width: 20px;
 }
