@@ -34,7 +34,7 @@
 
             <div class="card-info">
               <p><% if player.availability == false %>
-              <%= link_to "Book now!", new_club_booking_path(current_club.id), class: "btn btn-primary" %>
+              <%= link_to "Book now!", new_player_booking_path(player.id), class: "btn btn-primary" %>
               <% else %>
               <%= "Unavailable" %>
               <% end %></p>

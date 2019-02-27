@@ -13,7 +13,7 @@
 
       <%= link_to "Market", players_path, class: "navbar-wagon-item navbar-wagon-link" %>
       <%= link_to "My Players", my_players_path, class: "navbar-wagon-item navbar-wagon-link" %>
-      <%= link_to "Bookings", club_bookings_path(current_club.id), class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to "Bookings", player_bookings_path(player.id), class: "navbar-wagon-item navbar-wagon-link" %>
 
 
       <!-- Avatar with dropdown menu -->

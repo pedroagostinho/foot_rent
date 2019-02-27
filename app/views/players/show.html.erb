@@ -35,7 +35,7 @@
     </div>
     <% if @player.availability == false %>
         <%#= "Player is available" %> <%#= '<i class="fas fa-check"></i>'.html_safe %>
-        <%= link_to "Book now!", new_club_booking_path(current_club.id), class: "btn btn-primary" %>
+        <%= link_to "Book now!", new_player_booking_path(@player.id), class: "btn btn-primary" %>
       <% else %>
         <%= "Player is already booked" %> <%= '<i class="fas fa-times"></i>'.html_safe %>
       <% end %>

@@ -46,12 +46,12 @@
   height: 40px;
   left: 1129px;
   top: 40px;
-  border: 1.5px solid $footrent-green;
+  border: 1.5px solid $footrent;
   box-sizing: border-box;
   border-radius: 10px;
   text-align: center;
   padding: 10px 15px;
-  color: $footrent-green;
+  color: $footrent;
 }
 
 .btn-medium:hover {
@@ -66,7 +66,7 @@
   font-size: 14px;
 }
 .navbar-wagon-link:hover {
-  color: $footrent-green;
+  color: $footrent;
   text-decoration: none;
 }
 

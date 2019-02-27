@@ -1,2 +1,20 @@
-<br>
-<h3>&nbsp; Your booking for Cristiano Ronaldo is now <strong>confirmed</strong>&nbsp; ✅</h3>
+<%#= simple_form_for(@booking) do |form| %>
+  <%#= form.input :start_date %>
+  <%#= form.input :end_date %>
+  <%#= form.submit :submit %>
+<%# end %>
+
+<%= simple_form_for [@player, @booking] do |f| %>
+  <%= f.error_notification %>
+
+    <%= f.input :start_date,
+                required: true,
+                autofocus: true %>
+    <%= f.input :end_date,
+                required: true,
+                autofocus: true %>
+
+  <div class="form-actions">
+    <%= f.button :submit, "Sign up" %>
+  </div>
+<% end %>

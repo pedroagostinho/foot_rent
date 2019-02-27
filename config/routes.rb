@@ -4,11 +4,10 @@ Rails.application.routes.draw do
 
   resources :players do
     resources :reviews
+    resources :bookings
   end
 
   get '/my_players', to: 'players#my_players'
-  resources :clubs do
-    resources :bookings
-  end
+  resources :clubs
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

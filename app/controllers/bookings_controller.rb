@@ -1,23 +1,22 @@
 class BookingsController < ApplicationController
+  before_action :set_player, except: :destroy
+
   def index
-    @club = Club.find(params[:club_id])
     @bookings = Booking.where(club_id: current_club.id)
   end
 
   def show
-    @club = Club.find(params[:club_id])
     @booking = Booking.find(params[:id])
   end
 
   def new
-    @club = Club.find(params[:club_id])
     @booking = Booking.new
   end
 
   def create
-    @club = Club.find(params[:club_id])
     @booking = Booking.new(booking_params)
-    @booking.club = @club
+    @booking.club = current_club
+    @booking.player = @player
 
     if @booking.save
       redirect_to club_bookings_path
@@ -36,5 +35,9 @@ class BookingsController < ApplicationController
 
   def booking_params
     params.require(:booking).permit(:start_date, :end_date)
+  end
+
+  def set_player
+    @player = Player.find(params[:player_id])
   end
 end
