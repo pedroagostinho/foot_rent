@@ -1,10 +1,15 @@
 <div class="player-container">
   <h1><%= @player.name %> </h1>
   <div class = "card-product">
+
     <div class="avatar">
-      <img class = "img" src="https://png.pngtree.com/element_our/png_detail/20181023/cr7-png-png_195384.jpg" alt="">
+      <%= cl_image_tag @player.photo, height: 300, width: 400, crop: :fill %>
     </div>
     <br>
+
+    <!-- <img class = "img" src="https://metrouk2.files.wordpress.com/2019/02/gettyimages-1130278499-1.jpg?quality=90&strip=all&zoom=1&resize=644%2C428" alt="">
+    <br> -->
+  
     <div class="card-product-infos">
       <div class = "info">
         <h2>Nationality</h2>
@@ -42,26 +47,26 @@
 </div>
 
 
-<!-- <div class = "card-product">
-  <%#= simple_form_for(@player) do |f| %>
 
-  <div id = "start-date" class="form-inputs">
-    <%#= f.input :name %>
-  </div>
-  <div class="form-inputs">
-    <%#= f.input :photo %>
-
-  </div>
+<div class = "card-product">
+  <%= simple_form_for(@player) do |f| %>
+    <%= f.input :photo %>
+    <%= f.input :photo_cache, as: :hidden %>
+    <!-- Add by Miguel Cloudary -->
+    <%= f.submit 'Upload Image', class: 'btn btn-primary' %>
 
 
-  <div class="form-actions">
+
+ <!--  <div class="form-actions">
     <%#= f.submit :Book, class: 'btn btn-primary '%>
+
   </div>
 <%# end %>
 
 
 </div>
  -->
+
 
 </div>
 
