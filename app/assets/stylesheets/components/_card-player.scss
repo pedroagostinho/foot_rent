@@ -86,7 +86,7 @@
 
 .card-description {
   position: absolute;
-  bottom: 47px;
+  bottom: 10px;
   left: 10px;
 }
 
@@ -126,9 +126,17 @@
   margin-left: 50px;
 }
 
+.club {
+  margin-bottom: 5px;
+}
 
 .btn-green-small:hover {
   opacity: 1;
   text-decoration: none;
   color: #A0A0A0;
+}
+
+.logo-team {
+  height: 20px;
+  width: 20px;
 }
