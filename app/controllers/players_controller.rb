@@ -8,7 +8,12 @@ class PlayersController < ApplicationController
 
     @club = @player.club
 
-    @markers = [{ lng: @club.longitude, lat: @club.latitude }]
+    @markers = [{
+      lng: @club.longitude,
+      lat: @club.latitude,
+      infoWindow: render_to_string(partial: "infowindow", locals: { club: @club }),
+      image_url: helpers.asset_url('soccer-icon.jpg')
+    }]
   end
 
   def new
