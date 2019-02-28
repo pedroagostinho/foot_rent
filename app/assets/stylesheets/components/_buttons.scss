@@ -1,4 +1,4 @@
-.btn-green {
+.btn-landing {
   width: 265px;
   height: 68px;
   border-radius: 35px;
@@ -7,4 +7,11 @@
   font-size: 18px;
   color: #FEFEFE;
   background-color: $footrent-color;
+}
+
+.btn-landing:hover {
+    text-decoration: none;
+    color: $footrent-color;
+    background-color: white;
+    border: 1px solid $footrent-color;
 }

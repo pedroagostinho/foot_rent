@@ -22,6 +22,7 @@ class BookingsController < ApplicationController
     @booking.club = @club
 
     if @booking.save
+      @player.availability = false
       redirect_to bookings_path
     else
       render :new

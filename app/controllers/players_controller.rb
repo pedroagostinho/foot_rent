@@ -1,10 +1,12 @@
 class PlayersController < ApplicationController
   def index
+
     if params[:query].present?
       @players = Player.global_search(params[:query]).where.not(club_id: current_club.id)
     else
-      @players = Player.where.not(club_id: current_club.id)
+      @players = Player.where.not(club_id: current_club.id, availability: false)
     end
+
   end
 
   def show
@@ -12,7 +14,12 @@ class PlayersController < ApplicationController
 
     @club = @player.club
 
-    @markers = [{ lng: @club.longitude, lat: @club.latitude }]
+    @markers = [{
+      lng: @club.longitude,
+      lat: @club.latitude,
+      infoWindow: render_to_string(partial: "infowindow", locals: { club: @club }),
+      image_url: helpers.asset_url('soccer-icon.jpg')
+    }]
   end
 
   def new
