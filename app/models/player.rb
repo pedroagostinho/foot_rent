@@ -2,6 +2,7 @@ class Player < ApplicationRecord
   belongs_to :club
   has_many :reviews, dependent: :destroy
   has_many :bookings, dependent: :destroy
+  has_many :stats, dependent: :destroy
   validates :name, presence: true
   validates :position, presence: true
   validates :value_per_match, presence: true
