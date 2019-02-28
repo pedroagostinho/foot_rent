@@ -1,8 +1,10 @@
-<%#= simple_form_for(@booking) do |form| %>
-  <%#= form.input :start_date %>
-  <%#= form.input :end_date %>
-  <%#= form.submit :submit %>
-<%# end %>
+<% if @player.availability == true || @player.availability == nil %>
+<% status = "available!" %>
+<% else %>
+<% status = "not available..." %>
+<% end %>
+
+<h3>This player is <%= status %></h3>
 
 <%= simple_form_for [@player, @booking] do |f| %>
   <%= f.error_notification %>
@@ -15,6 +17,8 @@
                 autofocus: true %>
 
   <div class="form-actions">
-    <%= f.button :submit, "Sign up" %>
+    <%= f.button :submit, "Book this player!", class: "btn btn-primary" %>
   </div>
 <% end %>
+
+<%= @player.name %>

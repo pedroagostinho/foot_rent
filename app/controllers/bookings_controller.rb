@@ -5,9 +5,9 @@ class BookingsController < ApplicationController
     @bookings = Booking.where(club_id: current_club.id)
   end
 
-  def show
-    @booking = Booking.find(params[:id])
-  end
+  # def show
+  #   @booking = Booking.find(params[:id])
+  # end
 
   def new
     @booking = Booking.new
@@ -17,6 +17,7 @@ class BookingsController < ApplicationController
     @booking = Booking.new(booking_params)
     @booking.club = current_club
     @booking.player = @player
+    @player_availability = @player.availability == false
 
     if @booking.save
       redirect_to club_bookings_path
