@@ -5,7 +5,7 @@ Review.destroy_all
 Stat.destroy_all
 
 number_of_clubs = 10
-number_of_players = 9
+number_of_players = 10
 number_of_bookings = 50
 number_of_reviews = 50
 
@@ -38,7 +38,7 @@ end
 
 number_of_players.times do
   player = Player.new(
-    photo: URI("https://picsum.photos/100/50/?random"),
+    # photo: URI("https://picsum.photos/100/50/?random"),
     name: Faker::Football.player,
     position: Faker::Football.position,
     value_per_match: rand(100...1000),
@@ -50,15 +50,15 @@ number_of_players.times do
   player.save!
 end
 
-number_of_bookings.times do
-  booking = Booking.new(
-    club_id: rand((Club.first.id)..(Club.last.id)),
-    player_id: rand((Player.first.id)..(Player.last.id)),
-    start_date: "2019-02-25 17:30",
-    end_date: "2019-02-28 17:30"
-  )
-  booking.save!
-end
+# number_of_bookings.times do
+#   booking = Booking.new(
+#     club_id: rand((Club.first.id)..(Club.last.id)),
+#     player_id: rand((Player.first.id)..(Player.last.id)),
+#     start_date: "2019-02-25 17:30",
+#     end_date: "2019-02-28 17:30"
+#   )
+#   booking.save!
+# end
 
 number_of_reviews.times do
   review = Review.new(
