@@ -1,5 +1,5 @@
 <div class="player-container">
-  <h1><%= @player.name %> </h1>
+  <h3><%= @player.name %> </h3>
   <div class = "card-product">
 
     <div class="avatar">
@@ -12,24 +12,23 @@
 
     <div class="card-product-infos">
       <div class = "info">
-        <h2>Nationality</h2>
-        <p><%= @player.nationality %></p>
-        <img src="https://cdn.countryflags.com/thumbs/portugal/flag-400.png" alt="">
+        <h4>Nationality</h4>
+        <p><%= @player.nationality %></p><img src="https://cdn.countryflags.com/thumbs/portugal/flag-400.png" alt="">
       </div>
       <div class = "info">
-        <h2>Position</h2>
+        <h4>Position</h4>
         <p><%= @player.position %> </p>
       </div>
       <div class = "info">
-        <h2>Age</h2>
+        <h4>Age</h2>
         <p><%= @player.age %></p>
       </div>
       <div class = "info">
-        <h2>Value per match</h2>
+        <h4>Value per match</h4>
         <p><%= @player.value_per_match%>€</p>
       </div>
       <div class = "info">
-        <h2>Club</h2>
+        <h4>Club</h4>
         <p><%= @player.club.name%></p>
       </div>
     </div>
