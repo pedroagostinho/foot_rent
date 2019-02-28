@@ -1,6 +1,6 @@
 class PlayersController < ApplicationController
   def index
-    @players = Player.where.not(club_id: current_club.id)
+    @players = Player.where.not(club_id: current_club.id, availability: false)
   end
 
   def show
