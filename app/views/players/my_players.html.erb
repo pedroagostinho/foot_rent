@@ -1,4 +1,30 @@
-<% @my_players.each do |player| %>
-<%= player.name %> <br>
-<%= player.club.name %> <br>
-<% end %>
+<div class="container">
+  <div class="row">
+       <!-- insert <div class="card"> -->
+    <% @my_players.each do |player| %>
+      <div class="col-xs-12 col-sm-6 col-md-4">
+
+
+          <%= link_to player_path(player) do %>
+            <div class="card-trip">
+              <%= cl_image_tag(player.photo)%>
+              <div class="card-trip-infos">
+                <div>
+                  <h2><%= player.name %></h2>
+                  <p><%= player.club.name %></p>
+                  <p><em><%= player.position %></em></p>
+                </div>
+                <h2 class="card-trip-pricing"><%= "#{player.value_per_match}€" %></h2>
+                <div class="card-trip-user avatar-bordered">
+                  <%= image_tag ('benfica-icon.png'), class: 'logo-team' %>
+                </div>
+              </div>
+            </div>
+            <% end %>
+
+<br>
+<br>
+      </div>
+    <% end %>
+  </div>
+</div>

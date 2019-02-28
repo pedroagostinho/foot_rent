@@ -4,8 +4,8 @@ Booking.destroy_all
 Review.destroy_all
 Stat.destroy_all
 
-number_of_clubs = 2
-number_of_players = 15
+number_of_clubs = 10
+number_of_players = 9
 number_of_bookings = 50
 number_of_reviews = 50
 
