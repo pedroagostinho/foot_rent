@@ -5,6 +5,10 @@ class PlayersController < ApplicationController
 
   def show
     @player = Player.find(params[:id])
+
+    @club = @player.club
+
+    @markers = [{ lng: @club.longitude, lat: @club.latitude }]
   end
 
   def new

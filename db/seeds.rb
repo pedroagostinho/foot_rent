@@ -19,6 +19,22 @@ number_of_clubs.times do
   )
   club.save!
 end
+  # Club.create!(
+  #   email: Faker::Internet.email,
+  #   password: "jonas10",
+  #   name: Faker::Football.team,
+  #   address: Faker::Address.street_address,
+  #   city: 'Lisbon'
+  # )
+
+  # Club.create!(
+  #   email: Faker::Internet.email,
+  #   password: "jonas10",
+  #   name: Faker::Football.team,
+  #   address: Faker::Address.street_address,
+  #   city: 'Porto'
+  # )
+
 
 number_of_players.times do
   player = Player.new(

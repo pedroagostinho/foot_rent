@@ -60,12 +60,19 @@
     <h4>Fitness</h4>
     <p><%= Player.find(@player.id).stats.first.form %></p>
   </div>
-  <%= image_tag('stats.png') %>
+  <%= link_to “Review this player”, new_player_review_path(@player), class: “” %>  <%#= image_tag('stats.png') %>
+  <div>
+    <h3>Player's Location: <%= @player.club.city %> </h3>
+    <div
+    id="map"
+    style="width: 100%;
+    height: 600px;"
+    data-markers="<%= @markers.to_json %>"
+    data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+    ></div>
+  </div>
 </div>
 
-<div>
-
-</div>
 
 
 <div class = "card-product">
