@@ -72,16 +72,20 @@
   margin-left: 25px;
 }
 
-
-
-
-
-
 .card-trip {
   overflow: hidden;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   border-radius: 10px;
+}
+
+.card-trip:hover {
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  animation-name: example;
+  animation-duration: 0.25s;
+  border-left: 8px solid $footrent-color;
+  // box-shadow: 0 14px 28px $footrent-color, 0 10px 10px $footrent-color;
 }
 
 .card-trip > img {
@@ -101,7 +105,6 @@
   opacity: .7;
   margin: 0;
 }
-
 
 .card-trip .card-trip-infos {
   padding: 16px;
