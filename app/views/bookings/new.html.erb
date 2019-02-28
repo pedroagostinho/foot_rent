@@ -1,7 +1,7 @@
 <h3>You are booking <%= @player.name %> </h3>
 
 <%= simple_form_for([ @player, @booking ]) do |form| %>
-  <%= form.input :start_date, as: :string, input_html: { class: "start-date date-picker" } %>
+  <%= form.input :start_date, as: :string, input_html: { class: "start-date" } %>
   <%= form.input :end_date, as: :string, input_html: { class: "date-picker" } %>
   <%= form.input :club_id, as: :hidden, input_html: { value: @club.id }  %>
   <%= form.input :player_id, as: :hidden, input_html: { value: @player.id }  %>
