@@ -1,6 +1,7 @@
+<h3>You have <%= @bookings.count %> players booked:</h3>
+
 <% @bookings.each_with_index do |booking, i| %>
-<% id = i + 1 %>
-<%#= link_to id, club_booking_path(booking.id) %>
+<%= id = i + 1 %>
 <%= booking.club.name %> <br>
 <%= booking.player.name %> <br>
 <%= booking.player.club.name %> <br>
