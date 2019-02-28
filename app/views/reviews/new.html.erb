@@ -1,0 +1,10 @@
+<h3>Give a review to <%= @player.name %> </h3>
+
+<%= simple_form_for([ @player, @review ]) do |form| %>
+  <%= form.input :content %>
+  <%= form.input :stars, input_html: { min: '0', max:'5', step: 'any' }%>
+  <%= form.input :club_id, as: :hidden, input_html: { value: @club.id }  %>
+  <%= form.input :player_id, as: :hidden, input_html: { value: @player.id }  %>
+  <%= form.submit :submit, class: "btn btn-primary" %>
+<% end %>
+
