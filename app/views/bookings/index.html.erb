@@ -1,10 +1,62 @@
+<% if @bookings.count == 1 %>
+<h3>You have 1 player booked:</h3>
+<% else %>
 <h3>You have <%= @bookings.count %> players booked:</h3>
-
-<% @bookings.each_with_index do |booking, i| %>
-<%= id = i + 1 %>
-<%= booking.club.name %> <br>
-<%= booking.player.name %> <br>
-<%= booking.player.club.name %> <br>
-<%= booking.start_date %> <br>
-<%= booking.end_date %> <br>
 <% end %>
+
+<div class="container">
+  <div class="row">
+       <!-- insert <div class="card"> -->
+    <% @bookings.each do |booking| %>
+      <div class="col-xs-12 col-sm-6 col-md-4">
+
+        <% if booking.start_date.day < 10 %>
+        <% start_day = "0#{booking.start_date.day}" %>
+        <% else %>
+        <% start_day = "#{booking.start_date.day}" %>
+        <% end %>
+
+        <% if booking.end_date.day < 10 %>
+        <% end_day = "0#{booking.end_date.day}" %>
+        <% else %>
+        <% end_day = "#{booking.end_date.day}" %>
+        <% end %>
+
+        <% if booking.start_date.month < 10 %>
+        <% start_month = "0#{booking.start_date.month}" %>
+        <% else %>
+        <% start_month = "#{booking.start_date.month}" %>
+        <% end %>
+
+        <% if booking.end_date.month < 10 %>
+        <% end_month = "0#{booking.end_date.month}" %>
+        <% else %>
+        <% end_month = "#{booking.end_date.month}" %>
+        <% end %>
+
+            <div class="card-trip">
+                <h2 class="card-trip-left">Start date: <%= "#{start_day}.#{start_month}.#{booking.start_date.year}" %></h2>
+
+
+                <h2 class="card-trip-right">End date: <%= "#{end_day}.#{end_month}.#{booking.end_date.year}" %></h2>
+
+
+              <%= cl_image_tag(booking.player.photo)%>
+              <div class="card-trip-infos">
+                <div>
+                  <h2><%= booking.player.name %></h2>
+                  <p><%= booking.club.name %></p>
+                  <p><em><%= booking.player.position %></em></p>
+                </div>
+              <div class="card-trip-user avatar-bordered">
+                <%= image_tag ('benfica-icon.png'), class: 'logo-team' %>
+              </div>
+            </div>
+          </div>
+<br>
+<br>
+      </div>
+    <% end %>
+  </div>
+</div>
+

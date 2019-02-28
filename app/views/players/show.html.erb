@@ -33,7 +33,7 @@
         <p><%= @player.club.name%></p>
       </div>
     </div>
-    <% if @player.availability == false %>
+    <% if @player.availability == true %>
         <%#= "Player is available" %> <%#= '<i class="fas fa-check"></i>'.html_safe %>
         <%= link_to "Book now!", new_player_booking_path(@player.id), class: "btn btn-primary" %>
       <% else %>
@@ -60,7 +60,7 @@
     <h4>Fitness</h4>
     <p><%= Player.find(@player.id).stats.first.form %></p>
   </div>
-  <%#= link_to “Review this player”, new_player_review_path(@player), class: “” %>  <%#= image_tag('stats.png') %>
+
   <div>
     <h3>Player's Location: <%= @player.club.city %> </h3>
     <div
