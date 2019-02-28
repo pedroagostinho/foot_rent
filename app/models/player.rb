@@ -1,4 +1,15 @@
 class Player < ApplicationRecord
+  include PgSearch
+  pg_search_scope :global_search,
+  against: [:name, :position],
+  associated_against: {
+      club: [:name, :city]
+    },
+    using: {
+      tsearch: { prefix: true } # <-- now `superman batm` will return something!
+    }
+
+
   belongs_to :club
   has_many :reviews, dependent: :destroy
   has_many :bookings, dependent: :destroy
@@ -11,4 +22,5 @@ class Player < ApplicationRecord
   # validates :availability, presence: true
 
   mount_uploader :photo, PhotoUploader #cloudary
+
 end
