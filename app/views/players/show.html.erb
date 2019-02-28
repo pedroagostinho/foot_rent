@@ -60,7 +60,9 @@
     <h4>Fitness</h4>
     <p><%= Player.find(@player.id).stats.first.form %></p>
   </div>
-  <%= link_to “Review this player”, new_player_review_path(@player), class: “” %>  <%#= image_tag('stats.png') %>
+
+  <%= link_to "Review this player", new_player_review_path(@player.id), class: "btn btn-primary" %>
+
   <div>
     <h3>Player's Location: <%= @player.club.city %> </h3>
     <div

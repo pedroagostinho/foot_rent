@@ -1,6 +1,10 @@
 class PlayersController < ApplicationController
   def index
-    @players = Player.where.not(club_id: current_club.id)
+    if params[:query].present?
+      @players = Player.global_search(params[:query]).where.not(club_id: current_club.id)
+    else
+      @players = Player.where.not(club_id: current_club.id)
+    end
   end
 
   def show

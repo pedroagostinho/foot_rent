@@ -1,5 +1,12 @@
 
 <div class="container">
+<%= form_tag players_path, method: :get do %>
+  <%= text_field_tag :query,
+    params[:query],
+    class: "form-control",
+    placeholder: "Find a player"
+  %>
+<% end %>
   <div class="row">
        <!-- insert <div class="card"> -->
     <% @players.each do |player| %>
