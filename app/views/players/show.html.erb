@@ -41,9 +41,36 @@
       <% end %>
   </div>
   <div class="stats">
-    <%= image_tag('stats.png') %>
+    <table>
+      <tr>
+        <th>Played Games</th>
+        <th>Goals</th>
+        <th>Assits</th>
+        <th>Minutes played</th>
+      </tr>
+      <tr>
+        <td><%= Player.find(@player.id).stats.sum(:games_played) %></td>
+        <td><%= Player.find(@player.id).stats.sum(:goals) %></td>
+        <td><%= Player.find(@player.id).stats.sum(:assists) %></td>
+        <td><%= Player.find(@player.id).stats.sum(:goals)*90 %></td>
+      </tr>
+    </table>
   </div>
-
+  <div>
+    <h4>Fitness</h4>
+    <p><%= Player.find(@player.id).stats.first.form %></p>
+  </div>
+  <%= link_to “Review this player”, new_player_review_path(@player), class: “” %>  <%#= image_tag('stats.png') %>
+  <div>
+    <h3>Player's Location: <%= @player.club.city %> </h3>
+    <div
+    id="map"
+    style="width: 100%;
+    height: 600px;"
+    data-markers="<%= @markers.to_json %>"
+    data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+    ></div>
+  </div>
 </div>
 
 

@@ -10,4 +10,7 @@ class Club < ApplicationRecord
   # uniqueness: true
   validates :address, presence: true, uniqueness: true
   validates :city, presence: true
+  #geocoding
+  geocoded_by :city
+  after_validation :geocode, if: :will_save_change_to_city?
 end
