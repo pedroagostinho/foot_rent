@@ -41,9 +41,26 @@
       <% end %>
   </div>
   <div class="stats">
-    <%= image_tag('stats.png') %>
+    <table>
+      <tr>
+        <th>Played Games</th>
+        <th>Goals</th>
+        <th>Assits</th>
+        <th>Minutes played</th>
+      </tr>
+      <tr>
+        <td><%= Player.find(@player.id).stats.sum(:games_played) %></td>
+        <td><%= Player.find(@player.id).stats.sum(:goals) %></td>
+        <td><%= Player.find(@player.id).stats.sum(:assists) %></td>
+        <td><%= Player.find(@player.id).stats.sum(:goals)*90 %></td>
+      </tr>
+    </table>
   </div>
-
+  <div>
+    <h4>Fitness</h4>
+    <p><%= Player.find(@player.id).stats.first.form %></p>
+  </div>
+  <%= image_tag('stats.png') %>
 </div>
 
 
