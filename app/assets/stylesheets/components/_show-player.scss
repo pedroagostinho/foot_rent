@@ -27,6 +27,7 @@
   font-weight: bold;
   margin-left:100px;
   margin: 0;
+  font-family: Montserrat;
 }
 
 .card-product p {
@@ -35,6 +36,7 @@
   opacity: .7;
   margin-bottom: 0;
   margin-top: 8px;
+  font-family: Montserrat;
 }
 
 .card-product .card-product-infos {
@@ -60,10 +62,15 @@
 .player-container h4 {
   color: $footrent-color;
   margin-bottom: 0;
+  font-family: Montserrat;
+
 }
 
 .player-container h3 {
-  color: #717171;
+  color: #6B6F74;
+  font-family: Montserrat;
+  font-weight: lighter;
+
 }
 
 .card-product-stats {
@@ -75,11 +82,20 @@
   align-items: center;
   border-radius: 15px;
   height: 183px;
-  justify-content: center
+  justify-content: space-around;
 }
 
 .card-product-stats p {
-  font-size: 30px;
+  font-size: 35px;
+  color: #6B6F74;
+  font-family: Montserrat;
+  font-weight: lighter;
+
+}
+
+.card-product-stats h5 {
+  font-family: Montserrat;
+  color: $footrent-color;
 }
 
 .stats img {
@@ -119,6 +135,7 @@
   font-size: 16px;
   font-weight: bold;
   margin: 0;
+  font-family: Montserrat;
 }
 
 .card-trip p {
@@ -140,4 +157,8 @@
   right: 16px;
   top: -20px;
   width: 40px;
+}
+
+.review {
+  font-family: Montserrat;
 }
