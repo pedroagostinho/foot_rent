@@ -22,7 +22,8 @@ class BookingsController < ApplicationController
     @booking.club = @club
 
     if @booking.save
-      @player.availability = false
+      @player.update(availability: false)
+      @player.update(club: @club)
       redirect_to bookings_path
     else
       render :new
@@ -41,8 +42,6 @@ class BookingsController < ApplicationController
     params.require(:booking).permit(:start_date, :end_date, :player_id)
   end
 end
-
-
 
   # def create
   #   @restaurant = Restaurant.find(params[:restaurant_id])

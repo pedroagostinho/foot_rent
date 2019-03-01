@@ -27,9 +27,11 @@ class PlayersController < ApplicationController
   end
 
   def create
+    @club = current_club
     @player = Player.new(player_params)
+    @player.club = @club
     if @player.save
-      redirect_to @player
+      redirect_to my_players_path
     else
       render :new
     end

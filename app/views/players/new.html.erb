@@ -1,0 +1,16 @@
+<div>
+  <%= simple_form_for(@player) do |form| %>
+  <%= form.input :name %>
+  <%= form.input :age %>
+  <%= form.input :position, collection: [ "Goalkeeper", "Defender", "Midfielder", "Forward"] %>
+  <%= form.input :value_per_match %>
+  <%= form.input :nationality %>
+  <%= form.input :social_url %>
+  <%= form.input :club_id, as: :hidden, input_html: { value: current_club.id }  %>
+  <%= form.input :availability, as: :hidden, input_html: { value: true }  %>
+  <%= form.input :photo %>
+  <%= form.input :photo_cache, as: :hidden %>
+  <%= form.submit 'Upload Image', class: 'btn btn-primary margin-bottom' %>
+  <%= form.submit :submit, class: "btn btn-primary" %>
+  <% end %>
+</div>

@@ -40,7 +40,7 @@ number_of_players.times do
   player = Player.new(
     # photo: URI("https://picsum.photos/100/50/?random"),
     name: Faker::Football.player,
-    position: Faker::Football.position,
+    position: [ "Goalkeeper", "Defender", "Midfielder", "Forward"].sample,
     value_per_match: rand(100...1000),
     nationality: Faker::Address.country,
     age: rand(16..36),
