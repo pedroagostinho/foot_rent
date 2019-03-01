@@ -5,8 +5,8 @@
     <div class="avatar">
       <%= cl_image_tag @player.photo, height: 300, width: 300, crop: :fill %>
     </div>
-    <div class="card-product-infos">
-      <div class = "info">
+<!--     <div class="card-product-infos">
+ -->      <div class = "info">
         <h4>Nationality</h4>
         <p><img src="https://cdn.countryflags.com/thumbs/portugal/flag-400.png" alt=""> &nbsp; <%= @player.nationality %></p>
       </div>
@@ -19,7 +19,7 @@
         <p><%= @player.age %></p>
       </div>
       <div class = "info">
-        <h4>Value per match</h4>
+        <h4>Price</h4>
         <p><%= @player.value_per_match%>€</p>
       </div>
       <div class = "info">
@@ -30,12 +30,12 @@
         <h4>Social</h4>
         <a href="<%= @player.social_url %>", target="_blank"> <p><i class="fab fa-instagram fa-lg"></i></p></a>
       </div>
-    </div>
+    <!-- </div> -->
     <% if @player.availability == true %>
         <%#= "Player is available" %> <%#= '<i class="fas fa-check"></i>'.html_safe %>
         <%= link_to "Book now!", new_player_booking_path(@player.id), class: "btn btn-primary book" %>
       <% else %>
-        <%= "Player is already booked" %> <%= '<i class="fas fa-times"></i>'.html_safe %>
+        <div class="booked"><%= "Player is already booked" %><br><%= '<i class="fas fa-times fa-2x"></i>'.html_safe %></div>
       <% end %>
   </div>
 
