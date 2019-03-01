@@ -35,7 +35,7 @@
         <%#= "Player is available" %> <%#= '<i class="fas fa-check"></i>'.html_safe %>
         <%= link_to "Book now!", new_player_booking_path(@player.id), class: "btn btn-primary book" %>
       <% else %>
-        <div class="booked"><%= "Player is already booked" %><br><%= '<i class="fas fa-times fa-2x"></i>'.html_safe %></div>
+        <div class="booked"><%= "Player is booked" %><br><%= '<i class="fas fa-times fa-2x"></i>'.html_safe %></div>
       <% end %>
   </div>
 
