@@ -45,26 +45,26 @@
       <div class="col">
         <div class="card-product-stats">
           <div class = "info">
-            <h2>Games played</h2>
+            <h5>Games played</h5>
             <p><%= Player.find(@player.id).stats.sum(:games_played) %></p>
           </div>
           <div class = "info">
-            <h2>Goals</h2>
+            <h5>Assits</h5>
+            <p><%= Player.find(@player.id).stats.sum(:assists) %></p>
+          </div>
+          <div class = "info">
+            <h5>Goals</h5>
             <p><%= Player.find(@player.id).stats.sum(:goals) %></p>
           </div>
         </div>
 
         <div class="card-product-stats">
           <div class = "info">
-            <h2>Assits</h2>
-            <p><%= Player.find(@player.id).stats.sum(:assists) %></p>
-          </div>
-          <div class = "info">
-            <h2>Minutes played</h2>
+            <h5>Minutes played</h5>
             <p><%= Player.find(@player.id).stats.sum(:goals)*90 %></p>
           </div>
           <div class = "info">
-            <h2>Fitness</h2>
+            <h5>Fitness</h5>
             <p><%= Player.find(@player.id).stats.first.form %></p>
           </div>
         </div>
@@ -83,15 +83,21 @@
       </div>
     </div>
 
+<br>
+<br>
   </div>
-  <div>
+  <div class="review">
     <% @player.reviews.each do |review| %>
-      <%= review.content %> | <% review.stars.times do |i| %>
+      <strong><%= review.club.name %>:</strong>  "<em><%= review.content %></em>" | <% review.stars.times do |i| %>
       <%= '<i class="fas fa-star"></i>'.html_safe %>
-      <% end %> <br>
+      <% end %> <br><br>
     <% end %>
   </div>
-  <%= link_to "Review this player", new_player_review_path(@player.id), class: "btn btn-primary" %>
+  <br>
+
+  <div class="btn-review">
+    <%= link_to "Review this player", new_player_review_path(@player.id), class: "btn btn-primary" %>
+  </div>
 
   <div>
     <%#= @player.club.city %>

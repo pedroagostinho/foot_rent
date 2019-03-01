@@ -37,11 +37,13 @@
   left: 10px;
     h2 {
       font-size: 18px;
+      font-family: Montserrat;
     }
     p {
       font-size: 14px;
       opacity: 0.9;
       font-weight: lighter;
+      font-family: Montserrat;
     }
     a {
       color: $footrent-color;
@@ -90,6 +92,16 @@
   position: absolute;
   top: 40px;
   left: 30px;
+}
+
+
+.fa-star {
+  color: #EED638;
+}
+
+.btn-review .btn-primary {
+    margin-left: 0;
+    width: 142px;
 }
 
 .card-trip-pricing {
