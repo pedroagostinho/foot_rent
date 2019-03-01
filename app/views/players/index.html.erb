@@ -22,9 +22,10 @@
                   <p><%= player.club.name %></p>
                   <p><em><%= player.position %></em></p>
                 </div>
-                <h2 class="card-trip-pricing"><%= "#{player.value_per_match}€" %></h2>
+                <h3 class="card-trip-pricing"><em><%= "#{player.value_per_match} €" %></em></h3>
                 <div class="card-trip-user avatar-bordered">
                   <%= image_tag ('benfica-icon.png'), class: 'logo-team' %>
+                  <%#= image_tag (player.club.photo), class: 'logo-team' %>
                 </div>
               </div>
             </div>
