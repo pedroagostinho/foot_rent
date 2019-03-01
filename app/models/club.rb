@@ -13,4 +13,6 @@ class Club < ApplicationRecord
   #geocoding
   geocoded_by :city
   after_validation :geocode, if: :will_save_change_to_city?
+
+  mount_uploader :photo, PhotoUploader #cloudary
 end

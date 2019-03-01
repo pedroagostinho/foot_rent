@@ -20,6 +20,10 @@
                 required: true,
                 autofocus: true,
                 input_html: { autocomplete: "city" }%>
+    <%= f.input :photo,
+                required: true,
+                autofocus: true,
+                input_html: { autocomplete: "city" }%>
     <%= f.input :password,
                 required: true,
                 hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
@@ -27,6 +31,7 @@
     <%= f.input :password_confirmation,
                 required: true,
                 input_html: { autocomplete: "new-password" } %>
+    <%= f.label :photo do %> <%= f.file_field :photo %> <%= f.hidden_field :photo_cache %> <% end %>
   </div>
 
   <div class="form-actions">

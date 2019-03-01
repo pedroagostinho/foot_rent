@@ -29,24 +29,26 @@
                 hint: "leave it blank if you don't want to change it",
                 required: false,
                 input_html: { autocomplete: "new-password" } %>
-    <%= f.input :photo,
-                hint: "leave it blank if you don't want to change it",
-                required: false,
-                input_html: { autocomplete: "new-password" }%>
-
+    <%= f.label :photo do %> <%= f.file_field :photo %> <%= f.hidden_field :photo_cache %> <% end %>
+    <%#= f.submit 'Upload Image', class: 'btn btn-primary margin-bottom' %>
 
   </div>
 
   <div class="form-actions">
-    <%= f.button :submit, "Update", class: "btn btn-primary" %>
-  </div>
+    <%= f.submit :submit, class: "btn btn-primary" %>
+
 <% end %>
 
-<h3>Cancel my account</h3>
 
-<p>Unhappy? <%= link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
 
-<%= link_to "Back", :back %>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+  </div>
 
 <!--   <div>
     <%#= simple_form_for(@player) do |f| %>

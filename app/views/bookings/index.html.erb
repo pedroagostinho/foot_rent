@@ -51,8 +51,8 @@
                   <p><em><%= booking.player.position %></em></p>
                 </div>
               <div class="card-trip-user avatar-bordered">
-                <%= image_tag ('benfica-icon.png'), class: 'logo-team' %>
-                <%#= image_tag (player.club.photo), class: 'logo-team' %>
+                <%#= image_tag ('benfica-icon.png'), class: 'logo-team' %>
+                <%= cl_image_tag booking.player.club.photo, class: 'logo-team' %>
               </div>
             </div>
           </div>

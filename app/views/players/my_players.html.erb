@@ -23,8 +23,8 @@
                 </div>
                 <h3 class="card-trip-pricing"><em><%= "#{player.value_per_match} €" %></em></h3>
                 <div class="card-trip-user avatar-bordered">
-                  <%= image_tag ('benfica-icon.png'), class: 'logo-team' %>
-                  <%#= image_tag (player.club.photo), class: 'logo-team' %>
+                  <%#= image_tag ('benfica-icon.png'), class: 'logo-team' %>
+                  <%= cl_image_tag current_club.photo, class: 'logo-team' %>
                 </div>
               </div>
             </div>
