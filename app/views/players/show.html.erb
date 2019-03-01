@@ -79,7 +79,13 @@
     </div>
 
   </div>
-
+  <div>
+    <% @player.reviews.each do |review| %>
+      <%= review.content %> | <% review.stars.times do |i| %>
+      <%= '<i class="fas fa-star"></i>'.html_safe %>
+      <% end %> <br>
+    <% end %>
+  </div>
   <%= link_to "Review this player", new_player_review_path(@player.id), class: "btn btn-primary" %>
 
   <div>
