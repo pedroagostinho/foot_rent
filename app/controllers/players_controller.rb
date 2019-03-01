@@ -31,7 +31,7 @@ class PlayersController < ApplicationController
     @player = Player.new(player_params)
     @player.club = @club
     if @player.save
-      redirect_to my_players_path
+      redirect_to new_player_stat_path(@player)
     else
       render :new
     end

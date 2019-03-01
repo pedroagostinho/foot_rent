@@ -1,0 +1,12 @@
+<h3>Add stats for <%= @player.name %></h3>
+
+<div>
+  <%= simple_form_for( [@player, @stat] ) do |form| %>
+  <%= form.input :goals %>
+  <%= form.input :assists %>
+  <%= form.input :games_played %>
+  <%= form.input :form, collection: [ 'low', 'medium', 'high' ] %>
+  <%= form.input :player_id, as: :hidden, input_html: { value: @player.id }  %>
+  <%= form.submit :submit, class: "btn btn-primary" %>
+  <% end %>
+</div>

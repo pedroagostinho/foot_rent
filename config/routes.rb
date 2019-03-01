@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   resources :players do
     resources :reviews
     resources :bookings, only: [ :new, :create, :edit, :update, :destroy ]
+    resources :stats, only: [ :new, :create, :edit, :update ]
   end
 
   resources :bookings, only: [ :index ]
