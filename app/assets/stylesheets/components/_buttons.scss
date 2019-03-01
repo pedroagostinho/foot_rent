@@ -59,6 +59,26 @@
   }
 }
 
+.btn-primary2 {
+  background-color: white;
+  color: $footrent-color;
+  border: 1px solid $footrent-color;
+  margin-left: 12px;
+  border-radius: 37px;
+  width: 120px;
+  text-align: center;
+  font-size: 13px;
+  box-sizing: border-box;
+  padding: 10px 15px;
+  height: 40px;
+    &:hover {
+    text-decoration: none;
+    color: white;
+    background-color: $footrent-color;
+    border: 1px solid $footrent-color;
+  }
+}
+
 .btn-landing-small {
   width: 120px;
   height: 60px;
@@ -69,4 +89,23 @@
   color: #FEFEFE;
   background-color: $footrent-color;
   margin-left: 50px;
+}
+
+.btn-medium {
+  width: 120px;
+  height: 40px;
+  left: 1129px;
+  top: 40px;
+  border: 1.5px solid $footrent-color;
+  box-sizing: border-box;
+  border-radius: 10px;
+  text-align: center;
+  padding: 10px 15px;
+  color: $footrent-color;
+}
+
+.btn-medium:hover {
+  opacity: 1;
+  text-decoration: none;
+  color: #A0A0A0;
 }
