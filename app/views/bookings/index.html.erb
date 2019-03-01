@@ -37,10 +37,10 @@
 
           <%= link_to player_path(booking.player_id) do %>
             <div class="card-trip">
-                <h2 class="card-trip-left">Start date: <%= "#{start_day}.#{start_month}.#{booking.start_date.year}" %></h2>
+                <h2 id="white" class="card-trip-left">Start date: <%= "#{start_day}.#{start_month}.#{booking.start_date.year}" %></h2>
 
 
-                <h2 class="card-trip-right">End date: <%= "#{end_day}.#{end_month}.#{booking.end_date.year}" %></h2>
+                <h2 id="white" class="card-trip-right">End date: <%= "#{end_day}.#{end_month}.#{booking.end_date.year}" %></h2>
 
 
               <%= cl_image_tag(booking.player.photo)%>
